@@ -1,11 +1,12 @@
 let usuario = document.getElementById("usuario");
 let mensaje = document.getElementById("mensaje");
+let password = document.getElementById("password");
 
 usuario.addEventListener("input", function () {
 
     let valor = this.value;
 
-    if (/[^a-zA-Z]/.test(valor)) {  //el test da un valor verdadero o falso
+    if (/[^a-zA-Z]/.test(valor)) {  //el test da un valor is true or false
         this.style.border = "2px solid red";
         mensaje.textContent = "Usuario incorrecto";
         mensaje.style.color = "red";
@@ -22,8 +23,27 @@ usuario.addEventListener("input", function () {
     }
 
     this.value = valor.replace(/[^a-zA-Z]/g, '');
-});
+    
 
+});
+password.addEventListener("input", function () {
+
+    let valor = this.value;
+
+    if (valor.length <10) {  //el test da un valor is true or false
+        this.style.border = "2px solid red";
+        mensajePassword.textContent = "contraseña correcta";
+        mensajePassword.style.color = "red";
+    } 
+   
+    else {
+        this.style.border = "2px solid green";
+        mensajePassword.textContent = "Contraseña válida";
+        mensajePassword.style.color = "green";
+    }
+
+   
+    });
 
 
 
