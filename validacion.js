@@ -1,21 +1,51 @@
 let usuario = document.getElementById("usuario");
+let mensaje = document.getElementById("mensaje");
 
-usuario.addEventListener("input", function(){
-        this.value = this.value.toLowerCase();
-        this.value = this.value.replace(/[^a-z]/g, "")
-        this.border = "2px solid"
-        if(this.value == ""){
-            this.style.borderColor = "red"
-             this.nextElementSibling && (this.nextElementSibling.textContent = 'Nombre inválido');
-    this.nextElementSibling && (this.nextElementSibling.style.color = 'red');
+usuario.addEventListener("input", function () {
 
-        }else{
-            this.style.borderColor = "green"
-            this.nextElementSibling && (this.nextElementSibling.textContent = 'Nombre válido');
-    this.nextElementSibling && (this.nextElementSibling.style.color = 'green');
-        }
- }
-);
+    let valor = this.value;
+
+    if (/[^a-zA-Z]/.test(valor)) {  //el test da un valor verdadero o falso
+        this.style.border = "2px solid red";
+        mensaje.textContent = "Usuario incorrecto";
+        mensaje.style.color = "red";
+    } 
+    else if (valor === "") {
+        this.style.border = "2px solid red";
+        mensaje.textContent = "Campo obligatorio";
+        mensaje.style.color = "red";
+    } 
+    else {
+        this.style.border = "2px solid green";
+        mensaje.textContent = "Usuario válido";
+        mensaje.style.color = "green";
+    }
+
+    this.value = valor.replace(/[^a-zA-Z]/g, '');
+});
+
+
+
+
+
+// let usuario = document.getElementById("usuario");
+
+// usuario.addEventListener("input", function(){
+//         this.value = this.value.toLowerCase();
+//         this.value = this.value.replace(/[^a-z]/g, "")
+//         this.border = "2px solid"
+//         if(this.value == ""){
+//             this.style.borderColor = "red"
+//              this.nextElementSibling && (this.nextElementSibling.textContent = 'Nombre inválido');
+//     this.nextElementSibling && (this.nextElementSibling.style.color = 'red');
+
+//         }else{
+//             this.style.borderColor = "green"
+//             this.nextElementSibling && (this.nextElementSibling.textContent = 'Nombre válido');
+//     this.nextElementSibling && (this.nextElementSibling.style.color = 'green');
+//         }
+//  }
+// );
 
 //     if(evento.keyCode === 8) {
 //         evento.preventDefault()
