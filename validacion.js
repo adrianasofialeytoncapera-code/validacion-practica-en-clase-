@@ -5,7 +5,7 @@ usuario.addEventListener("input", function () {
 
     let valor = this.value;
 
-    if (/[^a-zA-Z]/.test(valor)) {  //el test da un valor verdadero o falso
+    if (/[^a-zA-Z]/.test(valor)) {  //el test da un valor is true or false
         this.style.border = "2px solid red";
         mensaje.textContent = "Usuario incorrecto";
         mensaje.style.color = "red";
