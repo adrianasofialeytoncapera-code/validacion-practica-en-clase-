@@ -6,6 +6,9 @@ usuario.addEventListener("input", function(){
         this.border = "2px solid"
         if(this.value == ""){
             this.style.borderColor = "red"
+             this.nextElementSibling && (this.nextElementSibling.textContent = 'Nombre inválido');
+    this.nextElementSibling && (this.nextElementSibling.style.color = 'red');
+
         }else{
             this.style.borderColor = "green"
             this.nextElementSibling && (this.nextElementSibling.textContent = 'Nombre válido');
