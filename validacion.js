@@ -103,7 +103,7 @@ formulario.addEventListener("submit", function (event) {
 
     if (usuarioValido && passwordError === "") {
 
-        mensajeFinal.textContent = "Formulario enviado correctamente ✅";
+        mensajeFinal.textContent = "Formulario enviado correctamente";
         mensajeFinal.style.color = "green";
 
         formulario.reset();
